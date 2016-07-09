@@ -3,8 +3,7 @@ import {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { modelReducer, formReducer } from 'react-redux-form';
-import {Router, Route, Link, RouteHandler} from 'react-router';
+import {Router, Route, Link, RouteHandler, IndexRoute} from 'react-router';
 
 import SearchBar from '../containers/searchbar.js';
 import reducers from '../reducers';
@@ -15,7 +14,7 @@ export default class IndexApp extends Component{
     return (
    		<div>
         <SearchBar />
-        </div>
+      </div>
     );
   }
 }

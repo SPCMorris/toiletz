@@ -3,7 +3,7 @@ import {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import {Router, Route, Link, RouteHandler} from 'react-router';
+import {Route, Link, RouteHandler} from 'react-router';
 import GoogleMap from './google_map'
 
 import ToiletList from '../containers/home.toilet-list';
@@ -15,8 +15,9 @@ export default class HomeApp extends Component{
 
 		return(
 			<div>
-			<ToiletList/>
+				<ToiletList/>
 			<GoogleMap/>
+			<button><Link to={"details"}>To details</Link></button>
 			</div>
 		);
 
@@ -27,7 +28,7 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
 	<Provider store={createStoreWithMiddleware(reducers)}>
-	<HomeApp/>
+		<HomeApp/>
 	</Provider>,
 	document.getElementById('app')
 )

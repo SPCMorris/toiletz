@@ -7,13 +7,6 @@ import {bindActionCreators} from 'redux';
 
 class SearchBar extends Component {
 
-
-  handleSubmit(val) {
-    // Do anything you want with the form value
-
-    console.log(val);
-  }
-
   render() {
    
 
@@ -22,7 +15,7 @@ class SearchBar extends Component {
       <input type="text"
       onChange={(event)=> this.props.searchVal(event.target.value)}
       ></input>
-      <button> Submit </button>
+      <button><Link to={"home"}>Submit</Link></button>
       </div>
     );
   }
