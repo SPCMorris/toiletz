@@ -14,7 +14,7 @@ export default class Header extends Component{
 			    <div className="navbar-header">
 			      <Link to={"/"}><h2>Toiletz</h2></Link>
 			    </div>
-		       		<div className="nav navbar-nav navbar-center">
+		       		<div className="nav navbar-nav">
 		          		<SearchBar />
 		          	</div>
 			        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

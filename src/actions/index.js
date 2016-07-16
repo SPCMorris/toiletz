@@ -11,6 +11,7 @@ export const FETCH_TOILET = 'FETCH_TOILET';
 export const FETCH_TOILETZ = 'FETCH_TOILETZ';
 export const SELECT_TOILETZ = 'SELECT_TOILETZ';
 export const CREATE_TOILET = 'CREATE_TOILET';
+export const TOILET_SELECTED = 'TOILET_SELECTED';
 
 export function search(endpoint) {
 	return convertAddress(endpoint)
@@ -43,7 +44,6 @@ export function convertAddress(address) {
 	let coords;
 	resolve(axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=' + API_KEY)
 		.then(function(payload) {
-			//console.log(payload, "PAYLOAD (GOOGLE API) IN ACTIONS, CONVERTADDRESS");
 			response = payload.data.results[0].geometry.location;
 			coords = { 
 				latitude: response.lat,
@@ -65,7 +65,7 @@ export function SelectToilet(toilet){
 	// an object with a type property.
 
 	return {
-		type: 'TOILET_SELECTED', //always uppercase
+		type: TOILET_SELECTED, //always uppercase
 		//piece of data that describe the action
 		payload: toilet
 
